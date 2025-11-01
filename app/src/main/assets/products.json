@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "titulo": "Pastel de Chocolate",
+    "descripcion": "color chocolate como mis huevosc arajo",
+    "precio": 35.000,
+    "imagen": "pastel_chocolate",
+    "forma": "Redondo",
+    "tamanio": "Mediano",
+    "stock": 5
+  },
+  {
+    "id": 2,
+    "titulo": "Pastel de Fresa",
+    "descripcion": "si el pastel de fresa fuera personoficado me lo follaria",
+    "precio": 32.000,
+    "imagen": "pastel_fresa",
+    "forma": "Redondo",
+    "tamanio": "Grande",
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "titulo": "Pastel de Vainilla",
+    "descripcion": "amarillo y weko",
+    "precio": 18.000,
+    "imagen": "pastel_vainilla",
+    "forma": "Cuadrado",
+    "tamanio": "Pequeño",
+    "stock": 8
+  }
+]
+

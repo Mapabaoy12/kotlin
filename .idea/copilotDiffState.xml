@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/app/src/main/assets/products.json">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/app/src/main/assets/products.json" />
+              <option name="originalContent" value="[&#10;  {&#10;    &quot;id&quot;: 1,&#10;    &quot;titulo&quot;: &quot;Pastel de Chocolate&quot;,&#10;    &quot;descripcion&quot;: &quot;Delicioso pastel de chocolate con tres capas y decoración de ganache&quot;,&#10;    &quot;precio&quot;: 350.00,&#10;    &quot;imagen&quot;: &quot;pastel_chocolate&quot;,&#10;    &quot;forma&quot;: &quot;Redondo&quot;,&#10;    &quot;tamanio&quot;: &quot;Mediano&quot;,&#10;    &quot;stock&quot;: 5&#10;  },&#10;  {&#10;    &quot;id&quot;: 2,&#10;    &quot;titulo&quot;: &quot;Pastel de Fresa&quot;,&#10;    &quot;descripcion&quot;: &quot;Pastel esponjoso con relleno de fresas naturales y crema&quot;,&#10;    &quot;precio&quot;: 320.00,&#10;    &quot;imagen&quot;: &quot;pastel_fresa&quot;,&#10;    &quot;forma&quot;: &quot;Redondo&quot;,&#10;    &quot;tamanio&quot;: &quot;Grande&quot;,&#10;    &quot;stock&quot;: 3&#10;  },&#10;  {&#10;    &quot;id&quot;: 3,&#10;    &quot;titulo&quot;: &quot;Pastel de Vainilla&quot;,&#10;    &quot;descripcion&quot;: &quot;Clásico pastel de vainilla con buttercream y decoración personalizada&quot;,&#10;    &quot;precio&quot;: 280.00,&#10;    &quot;imagen&quot;: &quot;pastel_vainilla&quot;,&#10;    &quot;forma&quot;: &quot;Cuadrado&quot;,&#10;    &quot;tamanio&quot;: &quot;Pequeño&quot;,&#10;    &quot;stock&quot;: 8&#10;  }&#10;]&#10;&#10;" />
+              <option name="updatedContent" value="[&#10;  {&#10;    &quot;id&quot;: 1,&#10;    &quot;titulo&quot;: &quot;Pastel de Chocolate&quot;,&#10;    &quot;descripcion&quot;: &quot;Delicioso pastel de chocolate con tres capas y decoración de ganache&quot;,&#10;    &quot;precio&quot;: 350.00,&#10;    &quot;imagen&quot;: &quot;pastel_chocolate&quot;,&#10;    &quot;forma&quot;: &quot;Redondo&quot;,&#10;    &quot;tamanio&quot;: &quot;Mediano&quot;,&#10;    &quot;stock&quot;: 5&#10;  },&#10;  {&#10;    &quot;id&quot;: 2,&#10;    &quot;titulo&quot;: &quot;Pastel de Fresa&quot;,&#10;    &quot;descripcion&quot;: &quot;Pastel esponjoso con relleno de fresas naturales y crema&quot;,&#10;    &quot;precio&quot;: 320.00,&#10;    &quot;imagen&quot;: &quot;pastel_fresa&quot;,&#10;    &quot;forma&quot;: &quot;Redondo&quot;,&#10;    &quot;tamanio&quot;: &quot;Grande&quot;,&#10;    &quot;stock&quot;: 3&#10;  },&#10;  {&#10;    &quot;id&quot;: 3,&#10;    &quot;titulo&quot;: &quot;Pastel de Vainilla&quot;,&#10;    &quot;descripcion&quot;: &quot;Clásico pastel de vainilla con buttercream y decoración personalizada&quot;,&#10;    &quot;precio&quot;: 280.00,&#10;    &quot;imagen&quot;: &quot;pastel_vainilla&quot;,&#10;    &quot;forma&quot;: &quot;Cuadrado&quot;,&#10;    &quot;tamanio&quot;: &quot;Pequeño&quot;,&#10;    &quot;stock&quot;: 8&#10;  }&#10;]&#10;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
