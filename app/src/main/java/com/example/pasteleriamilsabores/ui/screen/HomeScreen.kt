@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.pasteleriamilsabores.data.model.Product
+import com.example.pasteleriamilsabores.ui.theme.Pink40
+import com.example.pasteleriamilsabores.ui.theme.Pink80
 import com.example.pasteleriamilsabores.viewmodel.ProductViewModel
 import com.example.pasteleriamilsabores.viewmodel.CartViewModel
 import com.example.pasteleriamilsabores.viewmodel.UiState
@@ -144,7 +146,10 @@ fun ProductCard(
                 )
                 Button(
                     onClick = onAddToCart,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Pink80
+                    )
                 ) {
                     Text("Agregar")
                 }

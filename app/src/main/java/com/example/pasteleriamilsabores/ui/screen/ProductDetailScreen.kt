@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.pasteleriamilsabores.data.model.Product
+import com.example.pasteleriamilsabores.ui.theme.Pink80
 import com.example.pasteleriamilsabores.viewmodel.ProductViewModel
 import com.example.pasteleriamilsabores.viewmodel.CartViewModel
 
@@ -116,7 +117,9 @@ fun ProductDetailScreen(
                         ) {
                             Button(
                                 onClick = { cartViewModel.addToCart(product!!) },
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier.weight(1f),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Pink80)
                             ) {
                                 Text("Agregar al carrito")
                             }

@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.pasteleriamilsabores.data.model.CartItem
+import com.example.pasteleriamilsabores.ui.theme.Pink80
 import com.example.pasteleriamilsabores.viewmodel.CartUiState
 import com.example.pasteleriamilsabores.viewmodel.CartViewModel
 import kotlinx.coroutines.launch
@@ -168,7 +169,9 @@ fun CartScreen(
                                     }
                                 },
                                 modifier = Modifier.fillMaxWidth(),
-                                enabled = state.cart.items.isNotEmpty()
+                                enabled = state.cart.items.isNotEmpty(),
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = Pink80)
                             ) {
                                 Text("Realizar Compra")
                             }

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.layout.ContentScale
 import com.example.pasteleriamilsabores.R
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.pasteleriamilsabores.data.model.Product
+import com.example.pasteleriamilsabores.ui.theme.Pink80
 import java.util.Locale
 
 @Composable
@@ -71,7 +73,10 @@ fun ProductCard(
                 )
                 Button(
                     onClick = onAddToCart,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Pink80)
+
                 ) {
                     Text("Agregar")
                 }

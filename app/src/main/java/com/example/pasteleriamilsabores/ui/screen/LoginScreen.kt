@@ -18,6 +18,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.pasteleriamilsabores.ui.theme.Pink40
+import com.example.pasteleriamilsabores.ui.theme.Pink80
+import com.example.pasteleriamilsabores.ui.theme.Purple80
 
 @Composable
 fun LoginScreen(
@@ -94,7 +97,9 @@ fun LoginScreen(
             enabled = !uiState.isLoading,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 90.dp)
+                .padding(horizontal = 90.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Purple80)
         ) {
             Text(text = "Iniciar Sesión")
         }
