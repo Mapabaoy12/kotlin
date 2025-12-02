@@ -1,11 +1,13 @@
 package com.example.pasteleriamilsabores.data.repo
 
 import android.content.Context
+import android.util.Log
 import com.example.pasteleriamilsabores.data.local.AppDatabase
 import com.example.pasteleriamilsabores.data.local.entity.ProductEntity
 import com.example.pasteleriamilsabores.data.model.Product
 import com.example.pasteleriamilsabores.data.remote.RetrofitInstance
 import com.example.pasteleriamilsabores.util.NetworkUtils
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -17,6 +19,7 @@ class ProductRepository(private val context: Context) {
     private val db = AppDatabase.getInstance(context)
     private val dao = db.productDao()
     private val api = RetrofitInstance.api
+    private val gson = Gson()
 
     //Super flujo de la UI
     fun getProductsFlow(): Flow<List<Product>> {
@@ -81,6 +84,7 @@ class ProductRepository(private val context: Context) {
             
             Result.success(products)
         } catch (e: Exception) {
+            Log.e("ProductRepository", "Error fetching products from API", e)
             Result.failure(e)
         }
     }
@@ -103,6 +107,7 @@ class ProductRepository(private val context: Context) {
             }
             Result.success(products)
         } catch (e: Exception) {
+            Log.e("ProductRepository", "Error fetching products from local database", e)
             Result.failure(e)
         }
     }
@@ -132,7 +137,6 @@ class ProductRepository(private val context: Context) {
                 // Try to load from assets as fallback
                 try {
                     val json = context.assets.open("products.json").bufferedReader().use { it.readText() }
-                    val gson = com.google.gson.Gson()
                     val products: List<Product> = gson.fromJson(json, object : com.google.gson.reflect.TypeToken<List<Product>>() {}.type)
                     
                     val entities = products.map { p ->
@@ -151,7 +155,8 @@ class ProductRepository(private val context: Context) {
                     
                     insertEntities(entities)
                 } catch (exception: Exception) {
-                    // If assets not available, that's okay - can use API
+                    // Log the error but don't throw - can use API instead
+                    Log.w("ProductRepository", "Could not load products from assets, API will be used instead", exception)
                 }
             }
         } catch (error: Error) {
