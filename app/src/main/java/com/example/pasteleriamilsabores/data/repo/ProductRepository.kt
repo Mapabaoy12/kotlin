@@ -2,6 +2,7 @@ package com.example.pasteleriamilsabores.data.repo
 
 import android.content.Context
 import android.util.Log
+import androidx.room.withTransaction
 import com.example.pasteleriamilsabores.data.local.AppDatabase
 import com.example.pasteleriamilsabores.data.local.entity.ProductEntity
 import com.example.pasteleriamilsabores.data.model.Product
@@ -17,8 +18,7 @@ import kotlinx.coroutines.withContext
 class ProductRepository(private val context: Context) {
 
     private val db = AppDatabase.getInstance(context)
-    @Volatile
-    private var dao = db.productDao()
+    private val dao = db.productDao()
     private val api = RetrofitInstance.api
     private val gson = Gson()
     private val productListType = object : com.google.gson.reflect.TypeToken<List<Product>>() {}.type
@@ -81,8 +81,11 @@ class ProductRepository(private val context: Context) {
                 )
             }
             
-            // Use @Transaction method to ensure atomicity
-            dao.replaceAll(entities)
+            // Use withTransaction to ensure atomicity
+            db.withTransaction {
+                dao.deleteAll()
+                dao.insertAll(entities)
+            }
             
             Result.success(products)
         } catch (e: Exception) {
@@ -129,8 +132,6 @@ class ProductRepository(private val context: Context) {
             if (forceUpdate) {
                 try {
                     AppDatabase.recreateDatabase(context)
-                    val newDb = AppDatabase.getInstance(context)
-                    dao = newDb.productDao()
                 } catch (e: Exception) {
                     throw Error.DatabaseError("Error al recrear la base de datos: ${e.message}")
                 }

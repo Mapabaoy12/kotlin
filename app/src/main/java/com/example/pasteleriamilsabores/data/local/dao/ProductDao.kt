@@ -5,7 +5,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Transaction
 import androidx.room.Update
 import com.example.pasteleriamilsabores.data.local.entity.ProductEntity
 import kotlinx.coroutines.flow.Flow
@@ -52,15 +51,5 @@ interface ProductDao {
 
     @Query("SELECT COUNT(*) FROM products")
     suspend fun count(): Int
-
-    /**
-     * Replace all products with a new list in a single transaction.
-     * This ensures atomicity when syncing with the API.
-     */
-    @Transaction
-    suspend fun replaceAll(products: List<ProductEntity>) {
-        deleteAll()
-        insertAll(products)
-    }
 
 }
