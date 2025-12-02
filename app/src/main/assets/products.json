@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "sku": "CHOC-SQ-M-001",
     "titulo": "Torta cuadrada de Chocolate",
     "descripcion": "Deliciosa torta de chocolate con capas de ganache y un toque de avellanas. Personalizable con mensajes especiales.",
     "precio": 45000,
@@ -11,6 +12,7 @@
   },
   {
     "id": 2,
+    "sku": "FRUT-SQ-L-002",
     "titulo": "Torta cuadrada de frutas",
     "descripcion": "Una mezcla de frutas frescas y crema chantilly sobre un suave bizcocho de vainilla, ideal para celebraciones.",
     "precio": 50000,
@@ -21,6 +23,7 @@
   },
   {
     "id": 3,
+    "sku": "VAIN-CR-S-003",
     "titulo": "Torta circular de Vainilla",
     "descripcion": "Bizcocho de vainilla clásico relleno con crema pastelera y cubierto con un glaseado dulce, perfecto para cualquier ocasión.",
     "precio": 40000,
@@ -31,6 +34,7 @@
   },
   {
     "id": 4,
+    "sku": "MANJ-CR-S-004",
     "titulo": "Torta Circular de Manjar",
     "descripcion": "Torta tradicional chilena con manjar y nueces, un deleite para los amantes de los sabores dulces y clásicos.",
     "precio": 42000,
@@ -41,6 +45,7 @@
   },
   {
     "id": 5,
+    "sku": "BDAY-CR-S-005",
     "titulo": "Torta Especial de Cumpleaños",
     "descripcion": "Diseñada especialmente para celebraciones, personalizable con decoraciones y mensajes únicos.",
     "precio": 55000,
@@ -51,6 +56,7 @@
   },
   {
     "id": 6,
+    "sku": "WEDD-CR-S-006",
     "titulo": "Torta especial de boda",
     "descripcion": "Elegante y deliciosa, esta torta está diseñada para ser el centro de atención en cualquier boda.",
     "precio": 60000,
@@ -61,6 +67,7 @@
   },
   {
     "id": 7,
+    "sku": "VEGA-SQ-S-007",
     "titulo": "Torta vegana de chocolate",
     "descripcion": "Torta de chocolate húmeda y deliciosa, hecha sin productos de origen animal, perfecta para veganos.",
     "precio": 50000,

@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "products")
 data class ProductEntity(
     @PrimaryKey val id: Int,
+    @ColumnInfo(name = "sku") val sku: String,
     @ColumnInfo(name = "titulo") val titulo: String,
     @ColumnInfo(name = "descripcion") val descripcion: String,
     @ColumnInfo(name = "precio") val precio: Double,
