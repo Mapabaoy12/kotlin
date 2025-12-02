@@ -15,6 +15,9 @@ interface ProductDao {
     @Query("SELECT * FROM products ORDER BY id ASC")
     fun getAllFlow(): Flow<List<ProductEntity>>
 
+    @Query("SELECT * FROM products ORDER BY id ASC")
+    suspend fun getAll(): List<ProductEntity>
+
     @Query("SELECT * FROM products WHERE id = :id LIMIT 1")
     suspend fun getByid(id: Int): ProductEntity?
 
@@ -29,6 +32,9 @@ interface ProductDao {
 
     @Delete
     suspend fun delete(product: ProductEntity)
+
+    @Query("DELETE FROM products")
+    suspend fun deleteAll()
 
     @Query("SELECT COUNT(*) FROM products")
     suspend fun count(): Int

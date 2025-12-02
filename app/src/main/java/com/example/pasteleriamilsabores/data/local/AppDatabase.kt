@@ -14,7 +14,7 @@ import com.example.pasteleriamilsabores.data.local.entity.CartItemEntity
         ProductEntity::class,
         CartItemEntity::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -32,7 +32,6 @@ abstract class AppDatabase : RoomDatabase() {
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "pasteleria_db")
                 .fallbackToDestructiveMigration()
-                .allowMainThreadQueries()
                 .build()
 
         suspend fun clearDatabase(context: Context) {
