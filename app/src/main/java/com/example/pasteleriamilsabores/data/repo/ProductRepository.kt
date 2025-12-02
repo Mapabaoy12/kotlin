@@ -17,9 +17,11 @@ import kotlinx.coroutines.withContext
 class ProductRepository(private val context: Context) {
 
     private val db = AppDatabase.getInstance(context)
+    @Volatile
     private var dao = db.productDao()
     private val api = RetrofitInstance.api
     private val gson = Gson()
+    private val productListType = object : com.google.gson.reflect.TypeToken<List<Product>>() {}.type
 
     //Super flujo de la UI
     fun getProductsFlow(): Flow<List<Product>> {
@@ -64,7 +66,7 @@ class ProductRepository(private val context: Context) {
 
             val products = api.getProducts()
             
-            // Save to local database
+            // Save to local database in a transaction
             val entities = products.map { p ->
                 ProductEntity(
                     id = p.id,
@@ -79,8 +81,8 @@ class ProductRepository(private val context: Context) {
                 )
             }
             
-            dao.deleteAll()
-            dao.insertAll(entities)
+            // Use @Transaction method to ensure atomicity
+            dao.replaceAll(entities)
             
             Result.success(products)
         } catch (e: Exception) {
@@ -139,7 +141,7 @@ class ProductRepository(private val context: Context) {
                 // Try to load from assets as fallback
                 try {
                     val json = context.assets.open("products.json").bufferedReader().use { it.readText() }
-                    val products: List<Product> = gson.fromJson(json, object : com.google.gson.reflect.TypeToken<List<Product>>() {}.type)
+                    val products: List<Product> = gson.fromJson(json, productListType)
                     
                     val entities = products.map { p ->
                         ProductEntity(
