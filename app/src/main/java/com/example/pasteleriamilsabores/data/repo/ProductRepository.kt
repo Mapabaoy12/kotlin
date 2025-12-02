@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 class ProductRepository(private val context: Context) {
 
     private val db = AppDatabase.getInstance(context)
-    private val dao = db.productDao()
+    private var dao = db.productDao()
     private val api = RetrofitInstance.api
     private val gson = Gson()
 
@@ -127,6 +127,8 @@ class ProductRepository(private val context: Context) {
             if (forceUpdate) {
                 try {
                     AppDatabase.recreateDatabase(context)
+                    val newDb = AppDatabase.getInstance(context)
+                    dao = newDb.productDao()
                 } catch (e: Exception) {
                     throw Error.DatabaseError("Error al recrear la base de datos: ${e.message}")
                 }
